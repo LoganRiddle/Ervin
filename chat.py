@@ -8,55 +8,55 @@ import time
 
 
 # This is an information gathering focused function
-def question(Bot, userin):
-    time.sleep(1)
+#def question(Bot, userin):
+#    time.sleep(1)
     
-    count = 0
+#    count = 0
     
     # Iterates through the questions 
-    while count < 8:
-        if(Bot.user_name == "null"):
-            Bot.speak("What's your name?")
-            userin = input(">>")
-            Bot.user_name = userin
-            
-            Bot.speak("My name is Ervin")
-            
-        elif(Bot.user_age == -1):
-            Bot.speak("How old are you?")
-            userin = input(">>")
-            Bot.user_age = int(userin)
-        
-        elif(Bot.user_dob == "null"):
-            Bot.speak("When is your birthday?")
-            userin = input(">>")
-            Bot.user_dob = userin
-        
-        elif(Bot.user_fav_color == "null"):
-            Bot.speak("What's your favorite color?")
-            userin = input(">>")
-            Bot.user_fav_color = userin
-            
-        elif(Bot.user_hometown == "null"):
-            Bot.speak("Where are you from?")
-            userin = input(">>")
-            Bot.user_hometown = userin
-        
-        elif(Bot.user_hobbies == "null"):
-            Bot.speak("What is your favorite hobby?")
-            userin = input(">>")
-            Bot.user_hobbies = userin
-            
-        elif(Bot.user_occupation == "null"):
-            Bot.speak("What do you do for a living?")
-            userin = input(">>")
-            Bot.user_occupation = userin
-        
-        count += 1
-        
-    Bot.speak("Alrighty, nice to meet you!")
-    
-    return
+#    while count < 8:
+#        if(Bot.user_name == "null"):
+#            Bot.speak("What's your name?")
+#            userin = input(">>")
+#            Bot.user_name = userin
+#            
+#            Bot.speak("My name is Ervin")
+#            
+#        elif(Bot.user_age == -1):
+#            Bot.speak("How old are you?")
+#            userin = input(">>")
+#            Bot.user_age = int(userin)
+#        
+#        elif(Bot.user_dob == "null"):
+#            Bot.speak("When is your birthday?")
+#            userin = input(">>")
+#            Bot.user_dob = userin
+#        
+#        elif(Bot.user_fav_color == "null"):
+#            Bot.speak("What's your favorite color?")
+#            userin = input(">>")
+#            Bot.user_fav_color = userin
+#            
+#        elif(Bot.user_hometown == "null"):
+#            Bot.speak("Where are you from?")
+#            userin = input(">>")
+#            Bot.user_hometown = userin
+#        
+#        elif(Bot.user_hobbies == "null"):
+#            Bot.speak("What is your favorite hobby?")
+#            userin = input(">>")
+#            Bot.user_hobbies = userin
+#            
+#        elif(Bot.user_occupation == "null"):
+#            Bot.speak("What do you do for a living?")
+#            userin = input(">>")
+#            Bot.user_occupation = userin
+#        
+#        count += 1
+#        
+#    Bot.speak("Alrighty, nice to meet you!")
+#    
+#    return
 
 
 def main():
@@ -89,7 +89,7 @@ def main():
             userin = input(">>")
             Bot.user_name = userin
             
-            Bot.check_user(userin)
+            #Bot.check_user(userin)
              
         # Name
         elif (("your" and "name") in userin):
@@ -136,18 +136,19 @@ def main():
                 userin = input(">>")
                 Bot.user_init_state(userin)
                 # Bot.user_init_mood = userin
+           
+         
+        #elif (("get" and "know") in userin):
+        #    Bot.positive_update()
             
-        elif (("get" and "know") in userin):
-            Bot.positive_update()
-            
-            if Bot.curr_state > 2:
-                Bot.speak("Sure!")
-                question(Bot, userin);
-            else:
-                Bot.speak("Hell No!")       
+        #    if Bot.curr_state > 2:
+        #        Bot.speak("Sure!")
+        #        question(Bot, userin);
+        #    else:
+        #        Bot.speak("Hell No!")       
                 
         # End convo
-        elif userin == 'stop' or userin in Bot.end:
+        elif (userin == 'stop'):
             Bot.speak("Goodbye")
             Bot.generate_report()
             
